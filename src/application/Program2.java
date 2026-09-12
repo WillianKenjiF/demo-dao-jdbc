@@ -1,6 +1,5 @@
 package application;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,13 +20,13 @@ public class Program2 {
 		System.out.println(department);
 		
 		System.out.println("\n=== TEST 2: department findAll ===");
-		List<Department> list = new ArrayList<>();
+		List<Department> list = departmentDao.findAll();
 		for (Department d : list) {
 			System.out.println(d);
 		}
 		
 		System.out.println("\n=== TEST 3: department insert ===");
-		Department newDepartment = new Department(10, "Music");
+		Department newDepartment = new Department(null, "Music");
 		departmentDao.insert(newDepartment);
 		System.out.println("Insered! New id = " + newDepartment.getId());
 		
